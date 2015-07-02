@@ -8,18 +8,21 @@
 
 import Foundation
 import UIKit
+import CoreTelephony
 
 class UploadViewController: CameraOutputViewController
 {
+	@IBOutlet weak var uploadActivity: UIActivityIndicatorView!
 	@IBOutlet weak var uploadProgress: UIProgressView!
 	@IBOutlet weak var uploadButton: UIButton!
 	@IBOutlet weak var statusText: UILabel!
+	@IBOutlet weak var retakeButton: UIButton!
 	
 	@IBAction func share(sender: UIButton)
 	{
-		let shareText = "We’ve just helped the University of Nottingham in their research to automatically calculate the gestational age of premature babies. You can help, too!"
+		let shareText = "We’ve just helped @GestStudy in their research to automatically calculate the gestational age of premature babies. You can help, too!"
 		
-		if let shareURL = NSURL(string: "https://itunes.apple.com/us/app/babyface-data-collection/id980548726?ls=1&mt=8")
+		if let shareURL = NSURL(string: "http://tinyurl.com/gestationalage-estimation")
 		{
 			let objectsToShare = [shareText, shareURL]
 			let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
@@ -28,45 +31,53 @@ class UploadViewController: CameraOutputViewController
 		}
 	}
 	
-	@IBAction func uploadImages(sender: AnyObject)
+	@IBAction func startUpload(sender: AnyObject)
 	{
-		var parameters = [
+		let parameters = [
 			"face"		:NetData(data: pageController!.babyData.images["Fac"]!, mimeType: .ImageJpeg, filename: "face.jpg"),
 			"foot"		:NetData(data: pageController!.babyData.images["Foo"]!, mimeType: .ImageJpeg, filename: "foot.jpg"),
 			"ear"		:NetData(data: pageController!.babyData.images["Ear"]!, mimeType: .ImageJpeg, filename: "ear.jpg"),
 			"weight"	:"\(pageController!.babyData.weight)",
-			"age"		:"\(pageController!.babyData.age)",
-			"due"		:"\(pageController!.babyData.due)",
 			"gender"	:"\(pageController!.babyData.gender!)",
-			"ethnicity"	:"\(pageController!.babyData.ethnicity)"
+			"age"		:"\(pageController!.babyData.age)",
+			"ethnicity"	:"\(pageController!.babyData.ethnicity!)",
+			"due"		:"\(pageController!.babyData.due)",
+			"country"	:getCountry()
 		]
 		
-		let urlRequest = self.urlRequestWithComponents("http://matrix.cs.nott.ac.uk/babyface/upload.php", parameters: parameters)
+		let urlRequest = self.urlRequestWithComponents("http://www.cs.nott.ac.uk/babyface/upload.php", parameters: parameters)
 		
 		statusText.hidden = true
+		uploadActivity.alpha = 0;
+		uploadActivity.hidden = false
+		uploadActivity.startAnimating()
 		uploadProgress.progress = 0
 		uploadProgress.alpha = 0
 		uploadProgress.hidden = false
 		uploadButton.enabled = false
 		uploadButton.setTitle("Uploading", forState: .Normal)
-		
 		UIView.animateWithDuration(1, animations: {
-			self.uploadProgress.alpha = 1.0
+			self.uploadActivity.alpha = 1.0
 		})
 		
+		UIApplication.sharedApplication().networkActivityIndicatorVisible = true
 		upload(urlRequest.0, urlRequest.1)
 			.progress { (bytesWritten, totalBytesWritten, totalBytesExpectedToWrite) in
-				println("\(totalBytesWritten) / \(totalBytesExpectedToWrite)")
+				NSLog("\(totalBytesWritten) / \(totalBytesExpectedToWrite)")
 				self.uploadProgress.progress = Float(totalBytesWritten) / Float(totalBytesExpectedToWrite)
+
 			}
-			.responseJSON { (request, response, JSON, error) in
+			.response { (request, response, JSON, error) in
 				println("REQUEST \(request)")
 				println("RESPONSE \(response)")
 				println("JSON \(JSON)")
 				println("ERROR \(error)")
 				// TODO Handle error/
 				self.uploadProgress.hidden = true
-				if error != nil
+				self.uploadActivity.hidden = true
+				self.uploadActivity.stopAnimating()
+				UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+				if error != nil || response?.statusCode != 200
 				{
 					self.statusText.hidden = false
 					self.statusText.text = "Error uploading"
@@ -82,8 +93,30 @@ class UploadViewController: CameraOutputViewController
 					self.uploadButton.setTitle("Share", forState: .Normal)
 					self.uploadButton.removeTarget(self, action: "uploadImages:", forControlEvents: .TouchUpInside)
 					self.uploadButton.addTarget(self, action: "share:", forControlEvents: .TouchUpInside)
+					self.retakeButton.hidden = true
 				}
 		}
+	}
+	
+	func getCountry() -> String
+	{
+		let networkInfo = CTTelephonyNetworkInfo()
+		let carrier = networkInfo.subscriberCellularProvider
+		
+		// Get carrier name
+		var country = carrier.isoCountryCode
+		if country != nil
+		{
+			return country
+		}
+		
+		country = NSLocale.currentLocale().objectForKey(NSLocaleCountryCode) as? String
+		if country != nil
+		{
+			return country
+		}
+		
+		return ""
 	}
 	
 	func urlRequestWithComponents(urlString:String, parameters:NSDictionary) -> (URLRequestConvertible, NSData)

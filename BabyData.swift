@@ -12,8 +12,9 @@ class BabyData
 {
 	var images = [String: NSData]()
 	var gender : String?
-	var ethnicity = "White"
+	var ethnicity : String?
 	var weight: Float = 0.0
 	var age = 0
 	var due = 0
+	var country: String = ""
 }

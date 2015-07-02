@@ -11,11 +11,18 @@ class PageController: NSObject, UIPageViewControllerDataSource
 {
 	let pageViewController = UIPageViewController(transitionStyle: .Scroll, navigationOrientation: .Horizontal, options: nil)
 	let babyData = BabyData()
-	let pageNames = ["WelcomeViewController", "AboutViewController", "PrivacyPolicyViewController", "DataViewController", "FaceCameraViewController", "FaceOutputViewController", "EarCameraViewController", "EarOutputViewController", "FootCameraViewController", "FootOutputViewController" ]
+	var pageNames: [String]
+	{
+		if UIDevice.currentDevice().userInterfaceIdiom == .Pad
+		{
+			return ["WelcomeViewController", "PrivacyPolicyViewController", "DataViewController", "FaceCameraViewController", "FaceOutputViewController", "EarCameraViewController", "EarOutputViewController", "FootCameraViewController", "FootOutputViewController" ]
+		}
+		return ["WelcomeViewController", "AboutViewController", "PrivacyPolicyViewController", "DataViewController", "FaceCameraViewController", "FaceOutputViewController", "EarCameraViewController", "EarOutputViewController", "FootCameraViewController", "FootOutputViewController" ]
+	}
 	
 	var count: Int
 	{
-		return pageNames.count;
+		return pageNames.count
 	}
 
 	override init()

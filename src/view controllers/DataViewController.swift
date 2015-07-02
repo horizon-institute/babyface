@@ -20,14 +20,17 @@ class DataViewController: PageViewController, UITextFieldDelegate
 	@IBOutlet weak var dueSlider: UISlider!
 	@IBOutlet weak var ethnicitySelect: UISegmentedControl!
 	
+	@IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+	
 	override var nextPage: Bool
-		{
-			return nextButton.enabled
+	{
+		return nextButton.enabled
 	}
 	
 	override func viewDidLoad()
 	{
 		super.viewDidLoad()
+		registerForKeyboardNotifications()
 		if pageController?.babyData.weight != 0
 		{
 			weightField.text = "\(pageController!.babyData.weight)"
@@ -41,7 +44,7 @@ class DataViewController: PageViewController, UITextFieldDelegate
 		{
 			genderSelect.selectedSegmentIndex = 1
 		}
-		
+	
 		
 		if pageController?.babyData.ethnicity == "White"
 		{
@@ -94,6 +97,56 @@ class DataViewController: PageViewController, UITextFieldDelegate
 			}
 		}
 	}
+	
+	override func viewWillDisappear(animated: Bool)
+	{
+		NSNotificationCenter.defaultCenter().removeObserver(self,
+			name: UIKeyboardDidShowNotification,
+			object: nil)
+		
+		NSNotificationCenter.defaultCenter().removeObserver(self,
+			name: UIKeyboardWillHideNotification,
+			object: nil)
+	}
+	
+	func registerForKeyboardNotifications()
+	{
+		NSNotificationCenter.defaultCenter().addObserver(
+			self,
+			selector: "keyboardWillShow:",
+			name: UIKeyboardWillShowNotification,
+			object: nil)
+		
+		NSNotificationCenter.defaultCenter().addObserver(
+			self,
+			selector: "keyboardWillBeHidden:",
+			name: UIKeyboardWillHideNotification,
+			object: nil)
+	}
+	
+	func keyboardWillShow(notification: NSNotification)
+	{
+		if UIDevice.currentDevice().userInterfaceIdiom == .Pad
+		{
+		var info = notification.userInfo!
+		var keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
+		
+		UIView.animateWithDuration(0.1, animations: { () -> Void in
+			self.bottomConstraint.constant = keyboardFrame.size.height + 16
+		})
+		}
+	}
+
+	func keyboardWillBeHidden(notification: NSNotification)
+	{
+		var info = notification.userInfo!
+		var keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
+		
+		UIView.animateWithDuration(0.1, animations: { () -> Void in
+			self.bottomConstraint.constant = 16
+		})
+	}
+	
 	
 	@IBAction func weightChanged(sender: AnyObject)
 	{
@@ -149,6 +202,7 @@ class DataViewController: PageViewController, UITextFieldDelegate
 		{
 			pageController?.babyData.ethnicity = segment.titleForSegmentAtIndex(segment.selectedSegmentIndex)!
 		}
+		update()
 	}
 	
 	func endEditingNow()
@@ -164,10 +218,11 @@ class DataViewController: PageViewController, UITextFieldDelegate
 	
 	func update()
 	{
-		var enabled = pageController?.babyData.gender != nil && pageController?.babyData.weight != 0
+		var enabled = pageController?.babyData.gender != nil && pageController?.babyData.weight != 0 && pageController?.babyData.ethnicity != nil
 		if enabled != nextButton.enabled
 		{
 			nextButton.enabled = enabled
+			pageController?.refresh(self)
 			//pageController?.refresh()
 		}
 	}
