@@ -28,7 +28,7 @@ class CameraOutputViewController: PageViewController
 	
 	var photoName: String
 	{
-		let endIndex = advance(restorationIdentifier!.startIndex, 3)
+		let endIndex = restorationIdentifier!.startIndex.advancedBy(3)
 		return restorationIdentifier!.substringToIndex(endIndex)
 	}
 }

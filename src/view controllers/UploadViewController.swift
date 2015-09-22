@@ -61,17 +61,17 @@ class UploadViewController: CameraOutputViewController
 		})
 		
 		UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-		upload(urlRequest.0, urlRequest.1)
+		upload(urlRequest.0, data: urlRequest.1)
 			.progress { (bytesWritten, totalBytesWritten, totalBytesExpectedToWrite) in
 				NSLog("\(totalBytesWritten) / \(totalBytesExpectedToWrite)")
 				self.uploadProgress.progress = Float(totalBytesWritten) / Float(totalBytesExpectedToWrite)
 
 			}
 			.response { (request, response, JSON, error) in
-				println("REQUEST \(request)")
-				println("RESPONSE \(response)")
-				println("JSON \(JSON)")
-				println("ERROR \(error)")
+				print("REQUEST \(request)")
+				print("RESPONSE \(response)")
+				print("JSON \(JSON)")
+				print("ERROR \(error)")
 				// TODO Handle error/
 				self.uploadProgress.hidden = true
 				self.uploadActivity.hidden = true
@@ -104,16 +104,16 @@ class UploadViewController: CameraOutputViewController
 		let carrier = networkInfo.subscriberCellularProvider
 		
 		// Get carrier name
-		var country = carrier.isoCountryCode
+		var country = carrier!.isoCountryCode
 		if country != nil
 		{
-			return country
+			return country!
 		}
 		
 		country = NSLocale.currentLocale().objectForKey(NSLocaleCountryCode) as? String
 		if country != nil
 		{
-			return country
+			return country!
 		}
 		
 		return ""
@@ -122,7 +122,7 @@ class UploadViewController: CameraOutputViewController
 	func urlRequestWithComponents(urlString:String, parameters:NSDictionary) -> (URLRequestConvertible, NSData)
 	{
 		// create url request to send
-		var mutableURLRequest = NSMutableURLRequest(URL: NSURL(string: urlString)!)
+		let mutableURLRequest = NSMutableURLRequest(URL: NSURL(string: urlString)!)
 		mutableURLRequest.HTTPMethod = Method.POST.rawValue
 		//let boundaryConstant = "myRandomBoundary12345"
 		let boundaryConstant = "NET-POST-boundary-\(arc4random())-\(arc4random())"
@@ -141,10 +141,10 @@ class UploadViewController: CameraOutputViewController
 			if value is NetData
 			{
 				// add image
-				var postData = value as! NetData
+				let postData = value as! NetData
 				
 				// append content disposition
-				var filenameClause = " filename=\"\(postData.filename)\""
+				let filenameClause = " filename=\"\(postData.filename)\""
 				let contentDispositionString = "Content-Disposition: form-data; name=\"\(key)\";\(filenameClause)\r\n"
 				let contentDispositionData = contentDispositionString.dataUsingEncoding(NSUTF8StringEncoding)
 				uploadData.appendData(contentDispositionData!)

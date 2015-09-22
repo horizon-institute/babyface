@@ -10,7 +10,7 @@ import UIKit
 
 class PageViewController: UIViewController
 {
-	var pageController: PageController?
+	var pageController: RootViewController?
 	
 	var nextPage: Bool
 	{
@@ -29,11 +29,11 @@ class PageViewController: UIViewController
 	
 	@IBAction func date(sender: AnyObject)
 	{
-		let currentDate = NSDate()
-		let dateComponents = NSDateComponents()
-		dateComponents.day = -7
-		dateComponents.month = -9
-		let date = NSCalendar.currentCalendar().dateByAddingComponents(dateComponents, toDate: currentDate, options: NSCalendarOptions(0))
+		//let currentDate = NSDate()
+		//let dateComponents = NSDateComponents()
+		//dateComponents.day = -7
+		//dateComponents.month = -9
+		//let date = NSCalendar.currentCalendar().dateByAddingComponents(dateComponents, toDate: currentDate, options: NSCalendarOptions(rawValue: 0))
 		// http://numbersapi.com/\(month)/\(day)/date
 		// Stupid americans
 		

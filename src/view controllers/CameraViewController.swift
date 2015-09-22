@@ -25,28 +25,29 @@ class CameraViewController: PageViewController
 	
 	var photoName: String
 	{
-		let endIndex = advance(restorationIdentifier!.startIndex, 3)
+		let endIndex = restorationIdentifier!.startIndex.advancedBy(3)
 		return restorationIdentifier!.substringToIndex(endIndex)
 	}
 	
 	@IBAction func takePicture(sender: AnyObject)
 	{
 		cameraButton.enabled = false
-		var videoConnection = stillImageOutput.connectionWithMediaType(AVMediaTypeVideo)
-		if videoConnection != nil
+		let videoOutput = stillImageOutput.connectionWithMediaType(AVMediaTypeVideo)
+        if videoOutput != nil
 		{
 			stillImageOutput.captureStillImageAsynchronouslyFromConnection(stillImageOutput.connectionWithMediaType(AVMediaTypeVideo))
 				{ (imageDataSampleBuffer, error) -> Void in
 					if error == nil
 					{
-						var imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(imageDataSampleBuffer as CMSampleBuffer)
-						if imageData != nil
+						if let imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(imageDataSampleBuffer as CMSampleBuffer)
 						{
 							self.pageController?.babyData.images[self.photoName] = imageData;
 							self.pageController?.nextPage(self)
 						
-							let image = UIImage(data: imageData)
-							UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+							if let image = UIImage(data: imageData)
+                            {
+                                UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+                            }
 						}
 					}
 					else
@@ -75,7 +76,10 @@ class CameraViewController: PageViewController
 					{
 						if let device = captureDevice
 						{
-							device.lockForConfiguration(nil)
+							do {
+								try device.lockForConfiguration()
+							} catch _ {
+							}
 							if device.isFocusModeSupported(AVCaptureFocusMode.ContinuousAutoFocus)
 							{
 								device.focusMode = .ContinuousAutoFocus
@@ -96,7 +100,13 @@ class CameraViewController: PageViewController
 						}
 						
 						var err : NSError? = nil
-						var deviceInput = AVCaptureDeviceInput(device: captureDevice, error: &err)
+						var deviceInput: AVCaptureDeviceInput!
+						do {
+							deviceInput = try AVCaptureDeviceInput(device: captureDevice)
+						} catch let error as NSError {
+							err = error
+							deviceInput = nil
+						}
 						if err != nil
 						{
 							NSLog("error: \(err!.localizedDescription)")
@@ -110,7 +120,7 @@ class CameraViewController: PageViewController
 						previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
 						previewLayer?.frame = view.bounds
 						previewLayer?.videoGravity = AVLayerVideoGravityResizeAspect
-						cameraView.layer.addSublayer(previewLayer)
+						cameraView.layer.addSublayer(previewLayer!)
 						
 						stillImageOutput.outputSettings = [AVVideoCodecKey: AVVideoCodecJPEG]
 						if captureSession.canAddOutput(stillImageOutput)

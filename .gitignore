@@ -1,3 +1,5 @@
-
+.idea
+babyface.xccheckout
+xcuserdata/
+Pods/
 Podfile.lock
-Pod/

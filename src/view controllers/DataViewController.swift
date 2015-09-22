@@ -81,7 +81,7 @@ class DataViewController: PageViewController, UITextFieldDelegate
 	{
 		if let slider = sender as? UISlider
 		{
-			var value = Int(-slider.value)
+			let value = Int(-slider.value)
 			pageController?.babyData.age = value
 			if value == 0
 			{
@@ -129,7 +129,7 @@ class DataViewController: PageViewController, UITextFieldDelegate
 		if UIDevice.currentDevice().userInterfaceIdiom == .Pad
 		{
 		var info = notification.userInfo!
-		var keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
+		let keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
 		
 		UIView.animateWithDuration(0.1, animations: { () -> Void in
 			self.bottomConstraint.constant = keyboardFrame.size.height + 16
@@ -139,8 +139,8 @@ class DataViewController: PageViewController, UITextFieldDelegate
 
 	func keyboardWillBeHidden(notification: NSNotification)
 	{
-		var info = notification.userInfo!
-		var keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
+		//var info = notification.userInfo!
+		//var keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
 		
 		UIView.animateWithDuration(0.1, animations: { () -> Void in
 			self.bottomConstraint.constant = 16
@@ -151,7 +151,7 @@ class DataViewController: PageViewController, UITextFieldDelegate
 	@IBAction func weightChanged(sender: AnyObject)
 	{
 		let formatter = NSNumberFormatter()
-		if let weight = formatter.numberFromString(weightField.text)?.floatValue
+		if let weight = formatter.numberFromString(weightField.text!)?.floatValue
 		{
 			pageController?.babyData.weight = weight
 		}
@@ -162,7 +162,7 @@ class DataViewController: PageViewController, UITextFieldDelegate
 	{
 		if let slider = sender as? UISlider
 		{
-			var value = Int(slider.value)
+			let value = Int(slider.value)
 			pageController?.babyData.due = value
 			if value == -1
 			{
@@ -208,7 +208,7 @@ class DataViewController: PageViewController, UITextFieldDelegate
 	func endEditingNow()
 	{
 		let formatter = NSNumberFormatter()
-		if let weight = formatter.numberFromString(weightField.text)?.floatValue
+		if let weight = formatter.numberFromString(weightField.text!)?.floatValue
 		{
 			pageController?.babyData.weight = weight
 		}
@@ -218,7 +218,7 @@ class DataViewController: PageViewController, UITextFieldDelegate
 	
 	func update()
 	{
-		var enabled = pageController?.babyData.gender != nil && pageController?.babyData.weight != 0 && pageController?.babyData.ethnicity != nil
+		let enabled = pageController?.babyData.gender != nil && pageController?.babyData.weight != 0 && pageController?.babyData.ethnicity != nil
 		if enabled != nextButton.enabled
 		{
 			nextButton.enabled = enabled
@@ -239,7 +239,7 @@ class DataViewController: PageViewController, UITextFieldDelegate
 			// Setup the buttons to be put in the system.
 			let flexibleItem = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, target: nil, action: nil)
 			let item = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Done, target: self, action: Selector("endEditingNow") )
-			var toolbarButtons = [flexibleItem, item]
+			let toolbarButtons = [flexibleItem, item]
 			
 			//Put the buttons into the ToolBar and display the tool bar
 			keyboardDoneButtonView.setItems(toolbarButtons, animated: false)

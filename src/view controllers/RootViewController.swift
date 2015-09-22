@@ -7,52 +7,126 @@
 //
 import UIKit
 
-class RootViewController: UIViewController, UIPageViewControllerDelegate
+class RootViewController: UIPageViewController, UIPageViewControllerDataSource
 {
-	var pageController = PageController()
-	
-	override func viewDidLoad()
-	{
-		super.viewDidLoad()
-
-		let startingViewController: UIViewController = pageController.viewControllerAtIndex(0, storyboard: self.storyboard!)!
-		let viewControllers = [startingViewController]
-		pageController.pageViewController.setViewControllers(viewControllers, direction: .Forward, animated: false, completion: nil)
-		pageController.pageViewController.delegate = self
-
-		addChildViewController(pageController.pageViewController)
-		view.addSubview(pageController.pageViewController.view)
-
-		// Set the page view controller's bounds using an inset rect so that self's view is visible around the edges of the pages.
-		var pageViewRect = view.bounds
-		if UIDevice.currentDevice().userInterfaceIdiom == .Pad
-		{
-		    pageViewRect = CGRectInset(pageViewRect, 40.0, 40.0)
-		}
-		pageController.pageViewController.view.frame = view.bounds
-		pageController.pageViewController.didMoveToParentViewController(self)
-
-		// Add the page view controller's gesture recognizers to the book view controller's view so that the gestures are started more easily.
-		view.gestureRecognizers = pageController.pageViewController.gestureRecognizers
-	}
-	
-	override func didReceiveMemoryWarning()
-	{
-		super.didReceiveMemoryWarning()
-	}
-
-	// MARK: - UIPageViewController delegate methods
-
-	func pageViewController(pageViewController: UIPageViewController, spineLocationForInterfaceOrientation orientation: UIInterfaceOrientation) -> UIPageViewControllerSpineLocation
-	{
-	    let currentViewController = pageViewController.viewControllers[0] as! UIViewController
-	    let viewControllers = [currentViewController]
-	    pageViewController.setViewControllers(viewControllers, direction: .Forward, animated: true, completion: {done in })
-	    pageViewController.doubleSided = false
-	    return .Min
-	}
-	
-	func pageViewController(pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [AnyObject], transitionCompleted completed: Bool)
-	{
-	}
+    let babyData = BabyData()
+    var pageNames: [String]
+    {
+        if UIDevice.currentDevice().userInterfaceIdiom == .Pad
+        {
+            return ["WelcomeViewController", "PrivacyPolicyViewController", "DataViewController", "FaceCameraViewController", "FaceOutputViewController", "EarCameraViewController", "EarOutputViewController", "FootCameraViewController", "FootOutputViewController" ]
+        }
+        return ["WelcomeViewController", "AboutViewController", "PrivacyPolicyViewController", "DataViewController", "FaceCameraViewController", "FaceOutputViewController", "EarCameraViewController", "EarOutputViewController", "FootCameraViewController", "FootOutputViewController" ]
+    }
+    
+    var count: Int
+    {
+         return pageNames.count
+    }
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        
+        dataSource = self
+        
+        let startingViewController: UIViewController = viewControllerAtIndex(0, storyboard: self.storyboard!)!
+        let viewControllers = [startingViewController]
+        setViewControllers(viewControllers, direction: .Forward, animated: false, completion: nil)
+    }
+    
+    override func didReceiveMemoryWarning()
+    {
+        super.didReceiveMemoryWarning()
+    }
+    
+    func prevPage(viewController: UIViewController)
+    {
+        let prevController = pageViewController(self, viewControllerBeforeViewController: viewController)
+        if prevController != nil
+        {
+            let viewControllers: [UIViewController] = [prevController!]
+            setViewControllers(viewControllers, direction:.Reverse, animated: true, completion: nil)
+        }
+    }
+    
+    func nextPage(viewController: UIViewController)
+    {
+        let nextController = pageViewController(self, viewControllerAfterViewController: viewController)
+        if nextController != nil
+        {
+            let viewControllers: [UIViewController] = [nextController!]
+            setViewControllers(viewControllers, direction:.Forward, animated: true, completion: nil)
+        }
+    }
+    
+    func refresh(viewController: UIViewController)
+    {
+        let viewControllers: [UIViewController] = [viewController]
+        setViewControllers(viewControllers, direction:.Forward, animated: false, completion: nil)
+    }
+    
+    func viewControllerAtIndex(index: Int, storyboard: UIStoryboard) -> UIViewController?
+    {
+        if (pageNames.count == 0) || (index >= pageNames.count)
+        {
+            return nil
+        }
+        
+        let viewController = storyboard.instantiateViewControllerWithIdentifier(pageNames[index]) as UIViewController
+        if let pageViewController = viewController as? PageViewController
+        {
+            pageViewController.pageController = self;
+        }
+        
+        return viewController;
+    }
+    
+    func indexOfViewController(viewController: UIViewController) -> Int
+    {
+        var index = 0
+        for page in pageNames
+        {
+            if page == viewController.restorationIdentifier
+            {
+                return index;
+            }
+            index++
+        }
+        return NSNotFound
+    }
+    
+    // MARK: - Page View Controller Data Source
+    func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController?
+    {
+        var index = indexOfViewController(viewController)
+        if (index == 0) || (index == NSNotFound)
+        {
+            return nil
+        }
+        
+        index--
+        return viewControllerAtIndex(index, storyboard: viewController.storyboard!)
+    }
+    
+    func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController?
+    {
+        let pageController = viewController as? PageViewController
+        if pageController != nil && !pageController!.nextPage
+        {
+            return nil
+        }
+        var index = indexOfViewController(viewController)
+        if index == NSNotFound
+        {
+            return nil
+        }
+        
+        index++
+        if index >= pageNames.count
+        {
+            return nil
+        }
+        return viewControllerAtIndex(index, storyboard: viewController.storyboard!)
+    }
 }
