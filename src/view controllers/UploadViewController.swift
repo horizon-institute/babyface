@@ -22,7 +22,7 @@ class UploadViewController: CameraOutputViewController
 	{
 		let shareText = "We’ve just helped @GestStudy in their research to automatically calculate the gestational age of premature babies. You can help, too!"
 		
-		if let shareURL = NSURL(string: "http://tinyurl.com/gestationalage-estimation")
+		if let shareURL = NSURL(string: "http://cvl.cs.nott.ac.uk/resources/babyface/index.html")
 		{
 			let objectsToShare = [shareText, shareURL]
 			let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
