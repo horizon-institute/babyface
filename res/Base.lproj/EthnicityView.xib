@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CheckViewController" customModule="babyface" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="iN0-l3-epB" id="MDj-ZP-Uzl"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2iP-c7-22Z">
+                    <rect key="frame" x="0.0" y="150" width="320" height="274"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qO8-mP-eKA">
+                            <rect key="frame" x="0.0" y="14" width="320" height="246.5"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What ethnicity is your baby?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BjB-iK-LpY">
+                                    <rect key="frame" x="16" y="0.0" width="288" height="21.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" restorationIdentifier="White" translatesAutoresizingMaskIntoConstraints="NO" id="TLI-yF-JTU" userLabel="White View">
+                                    <rect key="frame" x="0.0" y="29.5" width="320" height="37.5"/>
+                                    <subviews>
+                                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_check" translatesAutoresizingMaskIntoConstraints="NO" id="xW2-AH-Ryr" userLabel="Girl Check">
+                                            <rect key="frame" x="96" y="7" width="24" height="24"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="White" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZZz-CY-b0d" userLabel="Girl Label">
+                                            <rect key="frame" x="136" y="8" width="47.5" height="21.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <gestureRecognizers/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="ZZz-CY-b0d" secondAttribute="bottom" constant="8" id="5p0-QK-qhY"/>
+                                        <constraint firstItem="ZZz-CY-b0d" firstAttribute="centerX" secondItem="TLI-yF-JTU" secondAttribute="centerX" id="Cui-qC-01R"/>
+                                        <constraint firstItem="xW2-AH-Ryr" firstAttribute="centerY" secondItem="TLI-yF-JTU" secondAttribute="centerY" id="Gaq-qQ-V3y"/>
+                                        <constraint firstItem="ZZz-CY-b0d" firstAttribute="leading" secondItem="xW2-AH-Ryr" secondAttribute="trailing" constant="16" id="O6a-uR-KLm"/>
+                                        <constraint firstItem="ZZz-CY-b0d" firstAttribute="top" secondItem="TLI-yF-JTU" secondAttribute="top" constant="8" id="oba-re-RM4"/>
+                                    </constraints>
+                                    <connections>
+                                        <outletCollection property="gestureRecognizers" destination="5Zo-vH-kTU" appends="YES" id="23c-iW-3Z1"/>
+                                    </connections>
+                                </view>
+                                <view contentMode="scaleToFill" restorationIdentifier="Asian" translatesAutoresizingMaskIntoConstraints="NO" id="vAz-Dm-SWU" userLabel="Asian View">
+                                    <rect key="frame" x="0.0" y="67" width="320" height="37.5"/>
+                                    <subviews>
+                                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_check" translatesAutoresizingMaskIntoConstraints="NO" id="hDw-Mg-J3a" userLabel="Boy Check">
+                                            <rect key="frame" x="98" y="7" width="24" height="24"/>
+                                            <color key="tintColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Asian" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DZe-6e-xEU" userLabel="Boy Label">
+                                            <rect key="frame" x="138" y="8" width="44.5" height="21.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <gestureRecognizers/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="DZe-6e-xEU" secondAttribute="bottom" constant="8" id="IC1-sa-GVs"/>
+                                        <constraint firstItem="DZe-6e-xEU" firstAttribute="leading" secondItem="hDw-Mg-J3a" secondAttribute="trailing" constant="16" id="cIg-t8-wqQ"/>
+                                        <constraint firstItem="DZe-6e-xEU" firstAttribute="centerX" secondItem="vAz-Dm-SWU" secondAttribute="centerX" id="xCd-hL-pOu"/>
+                                        <constraint firstItem="DZe-6e-xEU" firstAttribute="top" secondItem="vAz-Dm-SWU" secondAttribute="top" constant="8" id="yKq-mY-SYP"/>
+                                        <constraint firstItem="hDw-Mg-J3a" firstAttribute="centerY" secondItem="vAz-Dm-SWU" secondAttribute="centerY" id="yV1-gq-JVC"/>
+                                    </constraints>
+                                    <connections>
+                                        <outletCollection property="gestureRecognizers" destination="jGJ-Fg-75c" appends="YES" id="1FY-rW-Ura"/>
+                                    </connections>
+                                </view>
+                                <view contentMode="scaleToFill" restorationIdentifier="Black" translatesAutoresizingMaskIntoConstraints="NO" id="XJ7-kF-ve3" userLabel="Black View">
+                                    <rect key="frame" x="0.0" y="104.5" width="320" height="37.5"/>
+                                    <subviews>
+                                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_check" translatesAutoresizingMaskIntoConstraints="NO" id="XnQ-2j-h8M" userLabel="Boy Check">
+                                            <rect key="frame" x="98" y="7" width="24" height="24"/>
+                                            <color key="tintColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Black" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w3E-4j-PBY" userLabel="Boy Label">
+                                            <rect key="frame" x="138" y="8" width="44" height="21.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <gestureRecognizers/>
+                                    <constraints>
+                                        <constraint firstItem="w3E-4j-PBY" firstAttribute="centerX" secondItem="XJ7-kF-ve3" secondAttribute="centerX" id="743-ji-7AF"/>
+                                        <constraint firstAttribute="bottom" secondItem="w3E-4j-PBY" secondAttribute="bottom" constant="8" id="k4V-pL-ZxR"/>
+                                        <constraint firstItem="XnQ-2j-h8M" firstAttribute="centerY" secondItem="XJ7-kF-ve3" secondAttribute="centerY" id="nPc-2i-v9Q"/>
+                                        <constraint firstItem="w3E-4j-PBY" firstAttribute="top" secondItem="XJ7-kF-ve3" secondAttribute="top" constant="8" id="zdJ-GE-BkI"/>
+                                        <constraint firstItem="w3E-4j-PBY" firstAttribute="leading" secondItem="XnQ-2j-h8M" secondAttribute="trailing" constant="16" id="zzK-XG-7r7"/>
+                                    </constraints>
+                                    <connections>
+                                        <outletCollection property="gestureRecognizers" destination="PON-wG-Ubb" appends="YES" id="jhG-gs-9f4"/>
+                                    </connections>
+                                </view>
+                                <view contentMode="scaleToFill" restorationIdentifier="Mixed" translatesAutoresizingMaskIntoConstraints="NO" id="ifk-xq-Ljo" userLabel="Mixed View">
+                                    <rect key="frame" x="0.0" y="142" width="320" height="37.5"/>
+                                    <subviews>
+                                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_check" translatesAutoresizingMaskIntoConstraints="NO" id="kfx-FS-ySH" userLabel="Girl Check">
+                                            <rect key="frame" x="96" y="7" width="24" height="24"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mixed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZJ8-LY-pSd" userLabel="Girl Label">
+                                            <rect key="frame" x="136" y="8" width="48.5" height="21.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <gestureRecognizers/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="ZJ8-LY-pSd" secondAttribute="bottom" constant="8" id="Jx7-Uo-Q3d"/>
+                                        <constraint firstItem="kfx-FS-ySH" firstAttribute="centerY" secondItem="ifk-xq-Ljo" secondAttribute="centerY" id="W1C-T0-73S"/>
+                                        <constraint firstItem="ZJ8-LY-pSd" firstAttribute="top" secondItem="ifk-xq-Ljo" secondAttribute="top" constant="8" id="l8j-k0-3Ck"/>
+                                        <constraint firstItem="ZJ8-LY-pSd" firstAttribute="centerX" secondItem="ifk-xq-Ljo" secondAttribute="centerX" id="wdR-7a-39j"/>
+                                        <constraint firstItem="ZJ8-LY-pSd" firstAttribute="leading" secondItem="kfx-FS-ySH" secondAttribute="trailing" constant="16" id="zsg-Wz-RVc"/>
+                                    </constraints>
+                                    <connections>
+                                        <outletCollection property="gestureRecognizers" destination="tbh-PU-pVI" appends="YES" id="puv-rK-ez8"/>
+                                    </connections>
+                                </view>
+                                <view contentMode="scaleToFill" restorationIdentifier="Other" translatesAutoresizingMaskIntoConstraints="NO" id="3wA-Gt-Vt7" userLabel="Other View">
+                                    <rect key="frame" x="0.0" y="179.5" width="320" height="37.5"/>
+                                    <subviews>
+                                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_check" translatesAutoresizingMaskIntoConstraints="NO" id="r2J-Us-3BY" userLabel="Boy Check">
+                                            <rect key="frame" x="97" y="7" width="24" height="24"/>
+                                            <color key="tintColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Other" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EAx-RW-GGk" userLabel="Boy Label">
+                                            <rect key="frame" x="137" y="8" width="46.5" height="21.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <gestureRecognizers/>
+                                    <constraints>
+                                        <constraint firstItem="EAx-RW-GGk" firstAttribute="leading" secondItem="r2J-Us-3BY" secondAttribute="trailing" constant="16" id="EL8-wF-fxS"/>
+                                        <constraint firstItem="r2J-Us-3BY" firstAttribute="centerY" secondItem="3wA-Gt-Vt7" secondAttribute="centerY" id="GWj-9U-iLX"/>
+                                        <constraint firstItem="EAx-RW-GGk" firstAttribute="top" secondItem="3wA-Gt-Vt7" secondAttribute="top" constant="8" id="Lgx-Wn-eld"/>
+                                        <constraint firstAttribute="bottom" secondItem="EAx-RW-GGk" secondAttribute="bottom" constant="8" id="iEZ-Le-Mxe"/>
+                                        <constraint firstItem="EAx-RW-GGk" firstAttribute="centerX" secondItem="3wA-Gt-Vt7" secondAttribute="centerX" id="qVy-2O-fkm"/>
+                                    </constraints>
+                                    <connections>
+                                        <outletCollection property="gestureRecognizers" destination="hjl-be-fDg" appends="YES" id="frm-mi-Lu9"/>
+                                    </connections>
+                                </view>
+                                <view contentMode="scaleToFill" restorationIdentifier="Unknown" translatesAutoresizingMaskIntoConstraints="NO" id="HBf-u8-vPY" userLabel="Unknown View">
+                                    <rect key="frame" x="0.0" y="217" width="320" height="29.5"/>
+                                    <subviews>
+                                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_check" translatesAutoresizingMaskIntoConstraints="NO" id="nY3-Mv-a2L" userLabel="Girl Check">
+                                            <rect key="frame" x="82" y="3" width="24" height="24"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unknown" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Obn-hb-No2" userLabel="Girl Label">
+                                            <rect key="frame" x="122" y="8" width="76" height="21.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <gestureRecognizers/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="Obn-hb-No2" secondAttribute="bottom" id="18n-pv-l6M"/>
+                                        <constraint firstItem="Obn-hb-No2" firstAttribute="centerX" secondItem="HBf-u8-vPY" secondAttribute="centerX" id="Awn-P1-sFd"/>
+                                        <constraint firstItem="nY3-Mv-a2L" firstAttribute="centerY" secondItem="HBf-u8-vPY" secondAttribute="centerY" id="BgF-Ga-GAd"/>
+                                        <constraint firstItem="Obn-hb-No2" firstAttribute="leading" secondItem="nY3-Mv-a2L" secondAttribute="trailing" constant="16" id="J73-MW-lYh"/>
+                                        <constraint firstItem="Obn-hb-No2" firstAttribute="top" secondItem="HBf-u8-vPY" secondAttribute="top" constant="8" id="OIL-RX-yNu"/>
+                                    </constraints>
+                                    <connections>
+                                        <outletCollection property="gestureRecognizers" destination="z42-Zx-4yX" appends="YES" id="Huh-ty-aV6"/>
+                                    </connections>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="TLI-yF-JTU" firstAttribute="leading" secondItem="qO8-mP-eKA" secondAttribute="leading" id="360-f2-N1k"/>
+                                <constraint firstAttribute="trailing" secondItem="vAz-Dm-SWU" secondAttribute="trailing" id="9ch-Dz-dWe"/>
+                                <constraint firstAttribute="trailing" secondItem="ifk-xq-Ljo" secondAttribute="trailing" id="AqH-Ix-kwh"/>
+                                <constraint firstItem="BjB-iK-LpY" firstAttribute="top" secondItem="qO8-mP-eKA" secondAttribute="top" id="BO5-Zw-YIA"/>
+                                <constraint firstItem="HBf-u8-vPY" firstAttribute="leading" secondItem="qO8-mP-eKA" secondAttribute="leading" id="BwB-ma-v4L"/>
+                                <constraint firstItem="BjB-iK-LpY" firstAttribute="leading" secondItem="qO8-mP-eKA" secondAttribute="leading" constant="16" id="CzK-X5-GxU"/>
+                                <constraint firstAttribute="trailing" secondItem="HBf-u8-vPY" secondAttribute="trailing" id="EJW-lp-vgL"/>
+                                <constraint firstItem="vAz-Dm-SWU" firstAttribute="leading" secondItem="qO8-mP-eKA" secondAttribute="leading" id="Gni-uf-m0b"/>
+                                <constraint firstAttribute="trailing" secondItem="3wA-Gt-Vt7" secondAttribute="trailing" id="NTO-td-Pqq"/>
+                                <constraint firstAttribute="trailing" secondItem="BjB-iK-LpY" secondAttribute="trailing" constant="16" id="OlX-O6-9gc"/>
+                                <constraint firstAttribute="trailing" secondItem="TLI-yF-JTU" secondAttribute="trailing" id="Pb0-Vc-w5c"/>
+                                <constraint firstItem="vAz-Dm-SWU" firstAttribute="top" secondItem="TLI-yF-JTU" secondAttribute="bottom" id="RDE-Nf-Yct"/>
+                                <constraint firstItem="ifk-xq-Ljo" firstAttribute="leading" secondItem="qO8-mP-eKA" secondAttribute="leading" id="UQz-pL-z73"/>
+                                <constraint firstItem="TLI-yF-JTU" firstAttribute="top" secondItem="BjB-iK-LpY" secondAttribute="bottom" constant="8" id="aGg-Mv-xcK"/>
+                                <constraint firstItem="3wA-Gt-Vt7" firstAttribute="top" secondItem="ifk-xq-Ljo" secondAttribute="bottom" id="kgh-xt-qPc"/>
+                                <constraint firstItem="HBf-u8-vPY" firstAttribute="top" secondItem="3wA-Gt-Vt7" secondAttribute="bottom" id="oC8-Qq-eOy"/>
+                                <constraint firstItem="3wA-Gt-Vt7" firstAttribute="leading" secondItem="qO8-mP-eKA" secondAttribute="leading" id="pnT-J7-IpC"/>
+                                <constraint firstItem="ifk-xq-Ljo" firstAttribute="top" secondItem="XJ7-kF-ve3" secondAttribute="bottom" id="qGj-tG-REi"/>
+                                <constraint firstAttribute="trailing" secondItem="XJ7-kF-ve3" secondAttribute="trailing" id="qKY-kC-AUU"/>
+                                <constraint firstAttribute="bottom" secondItem="HBf-u8-vPY" secondAttribute="bottom" id="sQ7-ZO-pl2"/>
+                                <constraint firstItem="XJ7-kF-ve3" firstAttribute="leading" secondItem="qO8-mP-eKA" secondAttribute="leading" id="sc8-uK-3cX"/>
+                                <constraint firstItem="XJ7-kF-ve3" firstAttribute="top" secondItem="vAz-Dm-SWU" secondAttribute="bottom" id="xAz-gi-l4l"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="qO8-mP-eKA" secondAttribute="trailing" id="FXu-wy-Vq1"/>
+                        <constraint firstItem="qO8-mP-eKA" firstAttribute="centerY" secondItem="2iP-c7-22Z" secondAttribute="centerY" id="M89-lY-ovn"/>
+                        <constraint firstItem="qO8-mP-eKA" firstAttribute="leading" secondItem="2iP-c7-22Z" secondAttribute="leading" id="qup-wT-HC8"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <gestureRecognizers/>
+            <constraints>
+                <constraint firstItem="2iP-c7-22Z" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="150" id="DSF-4x-iT5"/>
+                <constraint firstItem="2iP-c7-22Z" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="JTN-vs-6L2"/>
+                <constraint firstAttribute="trailing" secondItem="2iP-c7-22Z" secondAttribute="trailing" id="TFu-fp-yzP"/>
+                <constraint firstAttribute="bottom" secondItem="2iP-c7-22Z" secondAttribute="bottom" constant="56" id="f3a-WQ-r5u"/>
+            </constraints>
+            <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+        </view>
+        <tapGestureRecognizer id="z42-Zx-4yX">
+            <connections>
+                <action selector="selectValue:" destination="-1" id="mph-6E-c83"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="hjl-be-fDg">
+            <connections>
+                <action selector="selectValue:" destination="-1" id="Czt-U2-3xi"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="tbh-PU-pVI">
+            <connections>
+                <action selector="selectValue:" destination="-1" id="zUI-Nl-1i7"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="PON-wG-Ubb">
+            <connections>
+                <action selector="selectValue:" destination="-1" id="ZxX-gd-407"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="jGJ-Fg-75c">
+            <connections>
+                <action selector="selectValue:" destination="-1" id="paU-5A-8Rg"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="5Zo-vH-kTU">
+            <connections>
+                <action selector="selectValue:" destination="-1" id="Zph-MZ-had"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+    <resources>
+        <image name="ic_check" width="24" height="24"/>
+    </resources>
+</document>

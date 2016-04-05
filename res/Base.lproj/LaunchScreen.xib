@@ -1,71 +1,76 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14E7f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="583" height="528"/>
+        <view contentMode="scaleToFill" id="jVU-Xz-xDD">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sleeping_baby_with_arm_extended.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="gTx-tJ-A6S">
-                    <rect key="frame" x="0.0" y="0.0" width="583" height="528"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="250" image="Sleeping_baby_with_arm_extended.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Lea-yf-bi0">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="290"/>
                 </imageView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mMq-aE-2Rg">
-                    <rect key="frame" x="0.0" y="381" width="583" height="147"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nuZ-6R-Rq3">
+                    <rect key="frame" x="0.0" y="289.5" width="320" height="190"/>
                     <subviews>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BabyFace" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="kId-c2-rCX">
-                            <rect key="frame" x="208" y="8" width="167" height="43"/>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BabyFace" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="YD3-nJ-r8z">
+                            <rect key="frame" x="76" y="8" width="168" height="43"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
                             <color key="textColor" red="0.25098040700000002" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BabyFace collects images of your baby to help those in need." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zbh-Ze-liX">
-                            <rect key="frame" x="20" y="59" width="543" height="21"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BabyFace collects images of your baby to help those in need." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="gjO-SP-qOr">
+                            <rect key="frame" x="20" y="59" width="280" height="41"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Copyright (c) 2015 Horizon. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="8ie-xW-0ye">
-                            <rect key="frame" x="72" y="116" width="439" height="15"/>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright © 2015-2016 University of Nottingham." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" preferredMaxLayoutWidth="288" translatesAutoresizingMaskIntoConstraints="NO" id="jF1-Af-RbX">
+                            <rect key="frame" x="16" y="171.5" width="288" height="14.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L2f-wi-H2F">
+                            <rect key="frame" x="135" y="116" width="51" height="39"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                            <state key="normal" title="Start"/>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstItem="zbh-Ze-liX" firstAttribute="top" secondItem="kId-c2-rCX" secondAttribute="bottom" constant="8" id="1b5-Vr-ZSm"/>
-                        <constraint firstAttribute="bottom" secondItem="8ie-xW-0ye" secondAttribute="bottom" constant="16" id="6QH-0v-SXW"/>
-                        <constraint firstItem="zbh-Ze-liX" firstAttribute="leading" secondItem="mMq-aE-2Rg" secondAttribute="leading" constant="20" id="GHA-i5-7zq"/>
-                        <constraint firstAttribute="trailing" secondItem="8ie-xW-0ye" secondAttribute="trailing" constant="72" id="Om1-QT-3bw"/>
-                        <constraint firstItem="8ie-xW-0ye" firstAttribute="leading" secondItem="mMq-aE-2Rg" secondAttribute="leading" constant="72" id="XGr-73-Mpx"/>
-                        <constraint firstItem="8ie-xW-0ye" firstAttribute="top" secondItem="zbh-Ze-liX" secondAttribute="bottom" constant="36" id="Xc0-Dz-pEv"/>
-                        <constraint firstAttribute="centerX" secondItem="kId-c2-rCX" secondAttribute="centerX" id="Xgm-Hi-3pb"/>
-                        <constraint firstItem="kId-c2-rCX" firstAttribute="top" secondItem="mMq-aE-2Rg" secondAttribute="top" constant="8" id="acm-ow-f25"/>
-                        <constraint firstAttribute="trailing" secondItem="zbh-Ze-liX" secondAttribute="trailing" constant="20" id="ao1-Zp-9S3"/>
+                        <constraint firstAttribute="bottom" secondItem="jF1-Af-RbX" secondAttribute="bottom" constant="4" id="9yL-dh-omf"/>
+                        <constraint firstAttribute="centerX" secondItem="YD3-nJ-r8z" secondAttribute="centerX" id="Bb7-oX-1Ph"/>
+                        <constraint firstAttribute="trailing" secondItem="gjO-SP-qOr" secondAttribute="trailing" constant="20" id="FAT-St-DNu"/>
+                        <constraint firstItem="jF1-Af-RbX" firstAttribute="top" secondItem="L2f-wi-H2F" secondAttribute="bottom" constant="16" id="J0W-og-0kw"/>
+                        <constraint firstItem="gjO-SP-qOr" firstAttribute="leading" secondItem="nuZ-6R-Rq3" secondAttribute="leading" constant="20" id="Rfm-zM-OL7"/>
+                        <constraint firstItem="jF1-Af-RbX" firstAttribute="leading" secondItem="nuZ-6R-Rq3" secondAttribute="leading" constant="16" id="ime-go-l0t"/>
+                        <constraint firstItem="L2f-wi-H2F" firstAttribute="centerX" secondItem="nuZ-6R-Rq3" secondAttribute="centerX" id="l36-1h-fQZ"/>
+                        <constraint firstItem="YD3-nJ-r8z" firstAttribute="top" secondItem="nuZ-6R-Rq3" secondAttribute="top" constant="8" id="nKH-k3-GwN"/>
+                        <constraint firstItem="L2f-wi-H2F" firstAttribute="top" secondItem="gjO-SP-qOr" secondAttribute="bottom" constant="16" id="nLW-ai-jDD"/>
+                        <constraint firstItem="gjO-SP-qOr" firstAttribute="top" secondItem="YD3-nJ-r8z" secondAttribute="bottom" constant="8" id="psz-xU-ERT"/>
+                        <constraint firstAttribute="trailing" secondItem="jF1-Af-RbX" secondAttribute="trailing" constant="16" id="tiJ-vN-suc"/>
                     </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="mMq-aE-2Rg" secondAttribute="bottom" id="7aI-6k-mcu"/>
-                <constraint firstAttribute="trailing" secondItem="gTx-tJ-A6S" secondAttribute="trailing" id="FUb-57-pW1"/>
-                <constraint firstItem="gTx-tJ-A6S" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="HEo-Er-evT"/>
-                <constraint firstItem="mMq-aE-2Rg" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Rm1-KI-ODz"/>
-                <constraint firstAttribute="trailing" secondItem="mMq-aE-2Rg" secondAttribute="trailing" id="Zor-ef-ioo"/>
-                <constraint firstItem="gTx-tJ-A6S" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="hER-i3-Ebp"/>
-                <constraint firstAttribute="bottom" secondItem="gTx-tJ-A6S" secondAttribute="bottom" id="zk6-fb-9k7"/>
+                <constraint firstAttribute="trailing" secondItem="Lea-yf-bi0" secondAttribute="trailing" id="0tJ-ac-Be9"/>
+                <constraint firstItem="nuZ-6R-Rq3" firstAttribute="leading" secondItem="jVU-Xz-xDD" secondAttribute="leading" id="BYl-it-eco"/>
+                <constraint firstAttribute="bottom" secondItem="nuZ-6R-Rq3" secondAttribute="bottom" id="WZS-7h-EbF"/>
+                <constraint firstItem="Lea-yf-bi0" firstAttribute="leading" secondItem="jVU-Xz-xDD" secondAttribute="leading" id="ZCo-f7-XO5"/>
+                <constraint firstAttribute="trailing" secondItem="nuZ-6R-Rq3" secondAttribute="trailing" id="dic-Z9-V82"/>
+                <constraint firstItem="Lea-yf-bi0" firstAttribute="top" secondItem="jVU-Xz-xDD" secondAttribute="top" id="leh-sO-6Wl"/>
+                <constraint firstItem="nuZ-6R-Rq3" firstAttribute="top" secondItem="Lea-yf-bi0" secondAttribute="bottom" id="zzN-fs-y0h"/>
             </constraints>
-            <nil key="simulatedStatusBarMetrics"/>
-            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="599.5" y="479"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
         </view>
     </objects>
     <resources>
-        <image name="Sleeping_baby_with_arm_extended.jpg" width="2136" height="1424"/>
+        <image name="Sleeping_baby_with_arm_extended.jpg" width="24" height="24"/>
     </resources>
 </document>

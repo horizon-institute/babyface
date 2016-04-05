@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WeightViewController" customModule="babyface" customModuleProvider="target">
+            <connections>
+                <outlet property="formatSelect" destination="Zn2-Gv-H8T" id="5xO-Nx-oki"/>
+                <outlet property="view" destination="iN0-l3-epB" id="Ygq-QA-t7Z"/>
+                <outlet property="weightPicker" destination="8AB-Ll-xes" id="QwI-iz-hYK"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ggg-oW-blm">
+                    <rect key="frame" x="0.0" y="150" width="320" height="274"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YCi-Fb-Rx7">
+                            <rect key="frame" x="0.0" y="4.5" width="320" height="265"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What did your baby weigh at birth?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="288" translatesAutoresizingMaskIntoConstraints="NO" id="Mx9-pQ-XxW">
+                                    <rect key="frame" x="16" y="0.0" width="288" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8AB-Ll-xes">
+                                    <rect key="frame" x="0.0" y="21" width="320" height="216"/>
+                                    <connections>
+                                        <outlet property="dataSource" destination="-1" id="gJO-jT-Je0"/>
+                                        <outlet property="delegate" destination="-1" id="8kf-J8-fNN"/>
+                                    </connections>
+                                </pickerView>
+                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Zn2-Gv-H8T">
+                                    <rect key="frame" x="86" y="237" width="147" height="29"/>
+                                    <segments>
+                                        <segment title="kilograms"/>
+                                        <segment title="pounds"/>
+                                    </segments>
+                                    <connections>
+                                        <action selector="update:" destination="-1" eventType="valueChanged" id="CRt-CS-wPD"/>
+                                    </connections>
+                                </segmentedControl>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="Zn2-Gv-H8T" firstAttribute="top" secondItem="8AB-Ll-xes" secondAttribute="bottom" id="1gc-nN-6uj"/>
+                                <constraint firstAttribute="bottom" secondItem="Zn2-Gv-H8T" secondAttribute="bottom" id="7R3-7u-Rnl"/>
+                                <constraint firstItem="8AB-Ll-xes" firstAttribute="leading" secondItem="YCi-Fb-Rx7" secondAttribute="leading" id="Bxu-T4-ZxR"/>
+                                <constraint firstItem="Zn2-Gv-H8T" firstAttribute="centerX" secondItem="YCi-Fb-Rx7" secondAttribute="centerX" id="F52-jQ-wxo"/>
+                                <constraint firstItem="8AB-Ll-xes" firstAttribute="top" secondItem="Mx9-pQ-XxW" secondAttribute="bottom" id="HQv-vk-ajs"/>
+                                <constraint firstAttribute="trailing" secondItem="8AB-Ll-xes" secondAttribute="trailing" id="RSh-ag-UUh"/>
+                                <constraint firstItem="Mx9-pQ-XxW" firstAttribute="leading" secondItem="YCi-Fb-Rx7" secondAttribute="leading" constant="16" id="gYP-ti-Ybj"/>
+                                <constraint firstItem="Mx9-pQ-XxW" firstAttribute="top" secondItem="YCi-Fb-Rx7" secondAttribute="top" id="lxN-sq-jkx"/>
+                                <constraint firstAttribute="trailing" secondItem="Mx9-pQ-XxW" secondAttribute="trailing" constant="16" id="oHh-Lg-jdm"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="YCi-Fb-Rx7" secondAttribute="trailing" id="FCG-eU-CHy"/>
+                        <constraint firstItem="YCi-Fb-Rx7" firstAttribute="leading" secondItem="ggg-oW-blm" secondAttribute="leading" id="L21-qI-0Wy"/>
+                        <constraint firstItem="YCi-Fb-Rx7" firstAttribute="centerY" secondItem="ggg-oW-blm" secondAttribute="centerY" id="WVE-N2-Fxi"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="ggg-oW-blm" secondAttribute="bottom" constant="56" id="7o1-IQ-zj5"/>
+                <constraint firstItem="ggg-oW-blm" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="XF0-Pd-uI1"/>
+                <constraint firstItem="ggg-oW-blm" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="150" id="fGK-cK-bGq"/>
+                <constraint firstAttribute="trailing" secondItem="ggg-oW-blm" secondAttribute="trailing" id="ncS-jY-f0w"/>
+            </constraints>
+            <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+</document>

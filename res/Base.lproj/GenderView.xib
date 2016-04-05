@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CheckViewController" customModule="babyface" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="iN0-l3-epB" id="hfT-dD-A97"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nxb-Zf-rfp">
+                    <rect key="frame" x="0.0" y="150" width="320" height="274"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="COn-wa-DxY">
+                            <rect key="frame" x="0.0" y="73" width="320" height="128.5"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Did you have a boy or a girl?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="288" translatesAutoresizingMaskIntoConstraints="NO" id="ZxS-Ps-fHY">
+                                    <rect key="frame" x="16" y="0.0" width="288" height="21.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" restorationIdentifier="Boy" translatesAutoresizingMaskIntoConstraints="NO" id="9FW-NT-gpt" userLabel="Boy View">
+                                    <rect key="frame" x="0.0" y="37.5" width="320" height="45.5"/>
+                                    <subviews>
+                                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_check" translatesAutoresizingMaskIntoConstraints="NO" id="uH8-O5-9k2">
+                                            <rect key="frame" x="104" y="11" width="24" height="24"/>
+                                            <color key="tintColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Boy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZ0-r6-KqY">
+                                            <rect key="frame" x="144" y="12" width="31" height="21.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <gestureRecognizers/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="LZ0-r6-KqY" secondAttribute="bottom" constant="12" id="DEL-ab-6J8"/>
+                                        <constraint firstItem="LZ0-r6-KqY" firstAttribute="centerX" secondItem="9FW-NT-gpt" secondAttribute="centerX" id="Np9-cN-aZW"/>
+                                        <constraint firstItem="LZ0-r6-KqY" firstAttribute="top" secondItem="9FW-NT-gpt" secondAttribute="top" constant="12" id="fDV-Z9-DD8"/>
+                                        <constraint firstItem="uH8-O5-9k2" firstAttribute="centerY" secondItem="9FW-NT-gpt" secondAttribute="centerY" id="pQ1-bm-c28"/>
+                                        <constraint firstItem="LZ0-r6-KqY" firstAttribute="leading" secondItem="uH8-O5-9k2" secondAttribute="trailing" constant="16" id="s82-TW-JhP"/>
+                                    </constraints>
+                                    <connections>
+                                        <outletCollection property="gestureRecognizers" destination="MAY-Ok-4PA" appends="YES" id="VZP-uR-KJY"/>
+                                    </connections>
+                                </view>
+                                <view contentMode="scaleToFill" restorationIdentifier="Girl" translatesAutoresizingMaskIntoConstraints="NO" id="yZ9-QO-9bb" userLabel="Girl View">
+                                    <rect key="frame" x="0.0" y="83" width="320" height="45.5"/>
+                                    <subviews>
+                                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_check" translatesAutoresizingMaskIntoConstraints="NO" id="wfs-ZX-PvT">
+                                            <rect key="frame" x="106" y="11" width="24" height="24"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Girl" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Iz-E7-now">
+                                            <rect key="frame" x="146" y="12" width="28" height="21.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <gestureRecognizers/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="0Iz-E7-now" secondAttribute="bottom" constant="12" id="2Lv-LF-b6N"/>
+                                        <constraint firstItem="0Iz-E7-now" firstAttribute="leading" secondItem="wfs-ZX-PvT" secondAttribute="trailing" constant="16" id="A2h-sl-foY"/>
+                                        <constraint firstItem="0Iz-E7-now" firstAttribute="top" secondItem="yZ9-QO-9bb" secondAttribute="top" constant="12" id="G46-sW-rbe"/>
+                                        <constraint firstItem="0Iz-E7-now" firstAttribute="centerX" secondItem="yZ9-QO-9bb" secondAttribute="centerX" id="gBh-Go-8M2"/>
+                                        <constraint firstItem="wfs-ZX-PvT" firstAttribute="centerY" secondItem="yZ9-QO-9bb" secondAttribute="centerY" id="y9T-dS-spZ"/>
+                                    </constraints>
+                                    <connections>
+                                        <outletCollection property="gestureRecognizers" destination="N4A-wC-Vxi" appends="YES" id="7EQ-7y-lv3"/>
+                                    </connections>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="yZ9-QO-9bb" secondAttribute="trailing" id="7Z8-oK-kgU"/>
+                                <constraint firstItem="ZxS-Ps-fHY" firstAttribute="leading" secondItem="COn-wa-DxY" secondAttribute="leading" constant="16" id="M31-Po-Ak6"/>
+                                <constraint firstItem="yZ9-QO-9bb" firstAttribute="top" secondItem="9FW-NT-gpt" secondAttribute="bottom" id="aQ1-aB-cgK"/>
+                                <constraint firstAttribute="trailing" secondItem="ZxS-Ps-fHY" secondAttribute="trailing" constant="16" id="tao-1V-KMx"/>
+                                <constraint firstItem="9FW-NT-gpt" firstAttribute="leading" secondItem="COn-wa-DxY" secondAttribute="leading" id="tmJ-lZ-Jom"/>
+                                <constraint firstItem="yZ9-QO-9bb" firstAttribute="leading" secondItem="COn-wa-DxY" secondAttribute="leading" id="u2z-8f-u8c"/>
+                                <constraint firstAttribute="trailing" secondItem="9FW-NT-gpt" secondAttribute="trailing" id="uoQ-uf-SzM"/>
+                                <constraint firstItem="9FW-NT-gpt" firstAttribute="top" secondItem="ZxS-Ps-fHY" secondAttribute="bottom" constant="16" id="wlN-QH-9Cz"/>
+                                <constraint firstAttribute="bottom" secondItem="yZ9-QO-9bb" secondAttribute="bottom" id="xPb-tX-pvj"/>
+                                <constraint firstItem="ZxS-Ps-fHY" firstAttribute="top" secondItem="COn-wa-DxY" secondAttribute="top" id="zsC-6R-Se4"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="COn-wa-DxY" secondAttribute="trailing" id="5re-4O-ccP"/>
+                        <constraint firstItem="COn-wa-DxY" firstAttribute="leading" secondItem="nxb-Zf-rfp" secondAttribute="leading" id="XID-UX-0ak"/>
+                        <constraint firstItem="COn-wa-DxY" firstAttribute="centerY" secondItem="nxb-Zf-rfp" secondAttribute="centerY" id="gVK-Z4-Abo"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="nxb-Zf-rfp" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="2iU-Y7-qRV"/>
+                <constraint firstAttribute="trailing" secondItem="nxb-Zf-rfp" secondAttribute="trailing" id="UkK-3E-WY6"/>
+                <constraint firstAttribute="bottom" secondItem="nxb-Zf-rfp" secondAttribute="bottom" constant="56" id="Vku-83-BUl"/>
+                <constraint firstItem="nxb-Zf-rfp" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="150" id="c51-Ow-c13"/>
+            </constraints>
+            <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+        </view>
+        <tapGestureRecognizer id="N4A-wC-Vxi">
+            <connections>
+                <action selector="selectValue:" destination="-1" id="7iB-uf-aPg"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="MAY-Ok-4PA">
+            <connections>
+                <action selector="selectValue:" destination="-1" id="Bjz-u7-Kxc"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+    <resources>
+        <image name="ic_check" width="24" height="24"/>
+    </resources>
+</document>

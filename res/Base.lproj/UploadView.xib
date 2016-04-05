@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UploadViewController" customModule="babyface" customModuleProvider="target">
+            <connections>
+                <outlet property="errorText" destination="XLd-U5-JZu" id="9KR-Jz-0ly"/>
+                <outlet property="shareButton" destination="4Eg-GA-Ua8" id="w29-dy-1VY"/>
+                <outlet property="statusText" destination="ku4-Fa-Lyl" id="z13-PN-kUj"/>
+                <outlet property="uploadActivity" destination="EyB-xD-PMo" id="S06-s2-B6s"/>
+                <outlet property="uploadButton" destination="dW4-5F-yOg" id="0RI-DZ-ZYx"/>
+                <outlet property="uploadProgress" destination="0dH-Hh-Y5M" id="wtF-9a-YWT"/>
+                <outlet property="view" destination="iN0-l3-epB" id="XLZ-No-OGT"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uds-vO-fVF">
+                    <rect key="frame" x="0.0" y="150" width="320" height="274"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qw1-Uh-8ej">
+                            <rect key="frame" x="0.0" y="81" width="320" height="112"/>
+                            <subviews>
+                                <progressView hidden="YES" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="0dH-Hh-Y5M">
+                                    <rect key="frame" x="64" y="0.0" width="192" height="2"/>
+                                </progressView>
+                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="EyB-xD-PMo">
+                                    <rect key="frame" x="86" y="14" width="20" height="20"/>
+                                </activityIndicatorView>
+                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Finished" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ku4-Fa-Lyl">
+                                    <rect key="frame" x="114.5" y="10" width="90" height="29"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="288" translatesAutoresizingMaskIntoConstraints="NO" id="XLd-U5-JZu">
+                                    <rect key="frame" x="16" y="47" width="288" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dW4-5F-yOg">
+                                    <rect key="frame" x="75" y="76" width="169" height="36"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                    <state key="normal" title="Upload Data" image="ic_file_upload_black_36dp">
+                                        <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="startUpload:" destination="-1" eventType="touchUpInside" id="T2p-wP-3mt"/>
+                                    </connections>
+                                </button>
+                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Eg-GA-Ua8">
+                                    <rect key="frame" x="129" y="71" width="62" height="41"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                    <state key="normal" title="Share"/>
+                                    <connections>
+                                        <action selector="share:" destination="-1" eventType="touchUpInside" id="nm6-j5-OAq"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="ku4-Fa-Lyl" firstAttribute="centerX" secondItem="Qw1-Uh-8ej" secondAttribute="centerX" id="78c-VQ-vHc"/>
+                                <constraint firstItem="XLd-U5-JZu" firstAttribute="top" secondItem="ku4-Fa-Lyl" secondAttribute="bottom" constant="8" id="FbC-8E-bip"/>
+                                <constraint firstAttribute="bottom" secondItem="dW4-5F-yOg" secondAttribute="bottom" id="QK2-pi-Wgg"/>
+                                <constraint firstItem="ku4-Fa-Lyl" firstAttribute="centerY" secondItem="EyB-xD-PMo" secondAttribute="centerY" id="WmI-qJ-ITY"/>
+                                <constraint firstItem="XLd-U5-JZu" firstAttribute="leading" secondItem="Qw1-Uh-8ej" secondAttribute="leading" constant="16" id="XS7-cv-UqL"/>
+                                <constraint firstItem="ku4-Fa-Lyl" firstAttribute="top" secondItem="0dH-Hh-Y5M" secondAttribute="bottom" constant="8" id="d3l-2l-mbE"/>
+                                <constraint firstItem="4Eg-GA-Ua8" firstAttribute="centerX" secondItem="Qw1-Uh-8ej" secondAttribute="centerX" id="d6A-eK-qHF"/>
+                                <constraint firstAttribute="bottom" secondItem="4Eg-GA-Ua8" secondAttribute="bottom" id="fXN-Dm-XxR"/>
+                                <constraint firstAttribute="trailing" secondItem="0dH-Hh-Y5M" secondAttribute="trailing" constant="64" id="gdf-cz-wyA"/>
+                                <constraint firstItem="ku4-Fa-Lyl" firstAttribute="leading" secondItem="EyB-xD-PMo" secondAttribute="trailing" constant="8" id="iaB-9Z-MYR"/>
+                                <constraint firstItem="0dH-Hh-Y5M" firstAttribute="leading" secondItem="Qw1-Uh-8ej" secondAttribute="leading" constant="64" id="l5P-Kr-KPg"/>
+                                <constraint firstAttribute="trailing" secondItem="XLd-U5-JZu" secondAttribute="trailing" constant="16" id="s5e-0E-Egg"/>
+                                <constraint firstItem="dW4-5F-yOg" firstAttribute="top" secondItem="XLd-U5-JZu" secondAttribute="bottom" constant="8" id="sP1-8s-c7G"/>
+                                <constraint firstItem="0dH-Hh-Y5M" firstAttribute="top" secondItem="Qw1-Uh-8ej" secondAttribute="top" id="sR4-NM-M6B"/>
+                                <constraint firstItem="dW4-5F-yOg" firstAttribute="centerX" secondItem="Qw1-Uh-8ej" secondAttribute="centerX" id="uhL-q6-exm"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="Qw1-Uh-8ej" firstAttribute="leading" secondItem="uds-vO-fVF" secondAttribute="leading" id="1aF-6z-Cuq"/>
+                        <constraint firstItem="Qw1-Uh-8ej" firstAttribute="centerY" secondItem="uds-vO-fVF" secondAttribute="centerY" id="ATW-DT-3YA"/>
+                        <constraint firstAttribute="trailing" secondItem="Qw1-Uh-8ej" secondAttribute="trailing" id="qUx-Dr-hoT"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="uds-vO-fVF" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="150" id="8d2-aO-QhM"/>
+                <constraint firstAttribute="bottom" secondItem="uds-vO-fVF" secondAttribute="bottom" constant="56" id="VCx-1s-0jG"/>
+                <constraint firstAttribute="trailing" secondItem="uds-vO-fVF" secondAttribute="trailing" id="ql8-Wp-xhn"/>
+                <constraint firstItem="uds-vO-fVF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="zhL-av-aLq"/>
+            </constraints>
+            <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_file_upload_black_36dp" width="36" height="36"/>
+    </resources>
+</document>

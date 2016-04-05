@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CameraViewController" customModule="babyface" customModuleProvider="target">
+            <connections>
+                <outlet property="activityView" destination="vWh-9j-TsL" id="nUv-gY-mrQ"/>
+                <outlet property="cameraButton" destination="q3T-7W-nz4" id="0Hi-DE-ZhU"/>
+                <outlet property="cameraView" destination="xvf-y3-Ja0" id="k8u-b6-p8r"/>
+                <outlet property="hintLabel" destination="QAS-Ch-kWG" id="i7i-WE-C3m"/>
+                <outlet property="outlineImage" destination="rFk-on-pCf" id="RRn-ce-Ibf"/>
+                <outlet property="view" destination="iN0-l3-epB" id="Vp5-n9-maM"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xvf-y3-Ja0">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="foot" translatesAutoresizingMaskIntoConstraints="NO" id="rFk-on-pCf">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Right Ear" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QAS-Ch-kWG">
+                    <rect key="frame" x="259" y="480" width="81" height="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q3T-7W-nz4">
+                    <rect key="frame" x="252" y="504" width="96" height="96"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="96" id="WpL-wI-QR9"/>
+                        <constraint firstAttribute="width" constant="96" id="leb-4T-Z4Q"/>
+                    </constraints>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
+                    <state key="normal" image="ic_camera_alt_white_48dp">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="takePicture:" destination="-1" eventType="touchUpInside" id="yPr-Nl-ggd"/>
+                    </connections>
+                </button>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="vWh-9j-TsL">
+                    <rect key="frame" x="0.0" y="504" width="600" height="96"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="96" id="8Gs-hg-9KP"/>
+                    </constraints>
+                </activityIndicatorView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xyJ-36-YRx">
+                    <rect key="frame" x="0.0" y="552" width="52" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="2xa-ph-XQ1"/>
+                        <constraint firstAttribute="width" constant="52" id="dc8-Vq-ChM"/>
+                    </constraints>
+                    <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal" image="ic_chevron_left"/>
+                    <connections>
+                        <action selector="prev:" destination="-1" eventType="touchUpInside" id="cg9-78-LFr"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="xvf-y3-Ja0" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="2XS-qv-tXV"/>
+                <constraint firstItem="q3T-7W-nz4" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="6g9-YC-Ard"/>
+                <constraint firstAttribute="trailing" secondItem="vWh-9j-TsL" secondAttribute="trailing" id="7Cc-1c-2RP"/>
+                <constraint firstAttribute="bottom" secondItem="xyJ-36-YRx" secondAttribute="bottom" id="Cl2-wz-EpA"/>
+                <constraint firstItem="xvf-y3-Ja0" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Fwy-xS-FiP"/>
+                <constraint firstAttribute="trailing" secondItem="rFk-on-pCf" secondAttribute="trailing" id="KFl-FV-AzR"/>
+                <constraint firstItem="q3T-7W-nz4" firstAttribute="top" secondItem="QAS-Ch-kWG" secondAttribute="bottom" id="L9r-DE-QBb"/>
+                <constraint firstAttribute="trailing" secondItem="xvf-y3-Ja0" secondAttribute="trailing" id="Owl-1i-u9B"/>
+                <constraint firstItem="QAS-Ch-kWG" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="QE7-9v-usy"/>
+                <constraint firstItem="rFk-on-pCf" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="RGH-2d-VV4"/>
+                <constraint firstAttribute="bottom" secondItem="q3T-7W-nz4" secondAttribute="bottom" id="baX-sy-DPb"/>
+                <constraint firstAttribute="bottom" secondItem="vWh-9j-TsL" secondAttribute="bottom" id="cGO-yR-y9E"/>
+                <constraint firstItem="xyJ-36-YRx" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="cZH-Bt-Rzb"/>
+                <constraint firstAttribute="bottom" secondItem="xvf-y3-Ja0" secondAttribute="bottom" id="gAz-su-utJ"/>
+                <constraint firstItem="vWh-9j-TsL" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="hAX-5c-5DI"/>
+                <constraint firstItem="rFk-on-pCf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="n7R-4s-dwl"/>
+                <constraint firstAttribute="bottom" secondItem="rFk-on-pCf" secondAttribute="bottom" id="ogF-h5-3XF"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="foot" width="1440" height="2400"/>
+        <image name="ic_camera_alt_white_48dp" width="48" height="48"/>
+        <image name="ic_chevron_left" width="24" height="24"/>
+    </resources>
+</document>
